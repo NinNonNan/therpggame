@@ -4,7 +4,10 @@ title = 'ILGDR! Devblog'
 theme = 'PaperMod'
 
 [params]
+    # Indichiamo a PaperMod dove sono i post per la Home Page
+    mainSections = ["posts"]
+    
     # Opzioni specifiche per PaperMod
-    defaultTheme = "auto" # Passa da Light a Dark in base al sistema
+    defaultTheme = "auto"
     showCodeCopyButtons = true
     showReadingTime = true
