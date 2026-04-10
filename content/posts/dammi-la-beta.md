@@ -1,7 +1,7 @@
 +++
 date = '2026-04-10T11:09:32+02:00'
 draft = false
-title = 'Diventa un BETA WARRIOR!'
+title = 'Diventa BETA WARRIOR!'
 +++
 
 Niente funziona mai al primo colpo. E va bene così.
@@ -14,7 +14,7 @@ E qui entri in gioco tu.
 
 Se hai voglia di sporcarti le mani, testare roba instabile, scoprire bug prima degli altri e aiutare a plasmare IL GIOCO mentre prende forma… allora sei nel posto giusto.
 
-🔥 Diventa un BETA WARRIOR 🔥
+🔥 Diventa BETA WARRIOR 🔥
 
 Entra nella fase in cui le cose non sono perfette — ma possono diventarlo grazie a te.
 
