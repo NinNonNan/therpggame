@@ -1,4 +1,11 @@
+{{- /* 
+    Shortcode: links
+    Parametri opzionali: title, github, kofi
+*/ -}}
+{{- $title := .Get "title" | default "Supporta il progetto" -}}
+{{- $github := .Get "github" | default "https://github.com/NinNonNan" -}}
+{{- $kofi := .Get "kofi" | default "https://ko-fi.com/therpggame" -}}
 <div style="margin: 40px 0; padding: 10px 0; border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border);">
-    <div style="font-size: 0.7em; opacity: 0.5; font-weight: bold; text-transform: uppercase; margin-bottom: 5px; letter-spacing: 1px;">Supporta il progetto</div>
-    {{ partial "social_icons.html" (slice (dict "name" "github" "url" "https://github.com/NinNonNan") (dict "name" "kofi" "url" "https://ko-fi.com/therpggame")) }}
+    <div style="font-size: 0.7em; opacity: 0.5; font-weight: bold; text-transform: uppercase; margin-bottom: 5px; letter-spacing: 1px;">{{ $title }}</div>
+    {{ partial "social_icons.html" (slice (dict "name" "github" "url" $github) (dict "name" "kofi" "url" $kofi)) }}
 </div>
