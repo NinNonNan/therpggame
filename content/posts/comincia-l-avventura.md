@@ -13,3 +13,5 @@ Lo intitolo, con molta modestia, **ILGDR!** tutto maiuscolo e senza spazi, per n
 Un gioco in cui buttare dentro ogni idea malsana e non, ogni “accipicchia, sarebbe bello se si potesse fare questa cosa”, e ogni “questa cosa è una figata”, cercando di mantenerlo — si spera — coerente, uniforme e gradevole.
 
 Quindi zaino in spalla (bello capiente, mi raccomando: gli spadoni a due mani occupano un sacco di spazio) e si parte.
+
+{{< links >}}
