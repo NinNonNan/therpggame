@@ -11,3 +11,11 @@ theme = 'PaperMod'
     defaultTheme = "auto"
     showCodeCopyButtons = true
     showReadingTime = true
+
+    [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/NinNonNan"
+
+    [[params.socialIcons]]
+    name = "kofi"
+    url = "https://ko-fi.com/therpggame"

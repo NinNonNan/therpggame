@@ -127,7 +127,42 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><div class="weather-rpg" id="weather-rpg" style="display: block; max-width: var(--main-width); margin: 0 auto; padding: 0 var(--gap);">
+    <div style="display: flex; align-items: center; gap: 20px; padding: 10px 0; margin: 10px 0;">      
+        <span id="w-icon" style="font-size: 3.5em; line-height: 1;">🌍</span>        
+        <div style="line-height: 1.4;">
+            <div id="w-fase" style="font-weight: 900; text-transform: uppercase; font-size: 1.2em; color: var(--secondary); letter-spacing: 1px;">
+                CARICAMENTO...
+            </div>          
+            <div id="w-desc" style="font-size: 1.1em; opacity: 0.9; font-style: italic;">
+                Sincronizzazione oracolo in corso...
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function updateWeather() {
+        try {
+            const res = await fetch('https://meteo-therpggame.antonino-ragusa-er.workers.dev/'); 
+            const d = await res.json();
+            
+            const icons = { "Sole forte": "☀️", "Cielo velato": "⛅", "Nebbia": "🌫️", "Pioggia": "🌧️", "Neve": "❄️", "Tempesta": "⛈️" };
+            
+            document.getElementById('w-icon').innerText = icons[d.meteo] || "🌍";
+            document.getElementById('w-fase').innerText = d.fase;
+            document.getElementById('w-desc').innerText = `${d.meteo} • ${d.temperatura} • Magia ${d.condizione_magica}`;
+            document.getElementById('weather-rpg').style.display = 'block';
+
+            
+            const header = document.querySelector('header.header');
+            if (header) {
+                header.after(document.getElementById('weather-rpg'));
+            }
+        } catch (e) { console.error("Meteo RPG offline"); }
+    }
+    updateWeather();
+</script>
 
 <script>
     let menu = document.getElementById('menu');
