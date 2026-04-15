@@ -1,6 +1,6 @@
 +++
 date = '2026-04-15T16:37:58+02:00'
-draft = true
+draft = false
 title = 'Nuova Release'
 +++
 
