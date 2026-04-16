@@ -1,3 +1,31 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css">
+
+<!-- Cookie Consent -->
+<script type="module">
+    import 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.esm.js';
+
+    CookieConsent.run({
+        guiOptions: {
+            consentModal: { layout: 'cloud inline', position: 'bottom right' },
+            preferencesModal: { layout: 'box' }
+        },
+        categories: {
+            analytics: { enabled: true, readOnly: false },
+            ads: { enabled: false, readOnly: false }
+        },
+        // Questa parte è la chiave per GTM
+        onConsent: ({cookie}) => {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'consent_update',
+                analytics_granted: cookie.categories.includes('analytics'),
+                ads_granted: cookie.categories.includes('ads')
+            });
+        }
+    });
+</script>
+<!-- End Cookie Consent -->
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
