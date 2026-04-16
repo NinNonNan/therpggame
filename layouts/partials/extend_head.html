@@ -1,9 +1,8 @@
+<!-- Cookie Consent -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css">
 
-<!-- Cookie Consent -->
-<script type="module">
-    import 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.esm.js';
-
+<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js"></script>
+<script>
     CookieConsent.run({
         guiOptions: {
             consentModal: { layout: 'cloud inline', position: 'bottom right' },
@@ -13,7 +12,6 @@
             analytics: { enabled: true, readOnly: false },
             ads: { enabled: false, readOnly: false }
         },
-        // Questa parte è la chiave per GTM
         onConsent: ({cookie}) => {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
