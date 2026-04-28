@@ -77,22 +77,34 @@
 <style>
      
     #cc-main {
-        --cc-bg: #fff;  
-        --cc-primary-color: #2d4156;
-        --cc-secondary-color: #555;
+         
+        --cc-bg: var(--theme, #fff);
+        --cc-primary-color: var(--secondary, #2d4156);
+        --cc-secondary-color: var(--content, #555);
+        
+        --cc-btn-primary-bg: var(--secondary, #333); 
+        --cc-btn-primary-text: var(--theme, #fff);
+        --cc-btn-primary-hover-bg: var(--tertiary, #000);
+
+        --cc-btn-secondary-bg: var(--tertiary, #eee);
+        --cc-btn-secondary-text: var(--secondary, #333);
+        --cc-btn-secondary-hover-bg: var(--border, #ddd);
         
          
-        --cc-btn-primary-bg: #333; 
-        --cc-btn-primary-hover-bg: #000;
-        
+        --cc-modal-border-radius: 0px;
+        --cc-btn-border-radius: 2px;
+        --cc-separator-border-color: var(--border, #eee);
+        --cc-footer-bg: var(--tertiary, #f9f9f9);
+
          
-        --cc-modal-border-radius: 0px; 
-        --cc-btn-border-radius: 4px;
+        z-index: 9999999 !important;
     }
 
      
-    @media (prefers-color-scheme: dark) {
-        #cc-main { --cc-bg: #1a1a1a; --cc-primary-color: #eee; }
+    .dark #cc-main {
+        --cc-bg: var(--theme, #1a1a1a);
+        --cc-primary-color: var(--secondary, #eee);
+        --cc-footer-bg: #252525;
     }
 </style>
 
@@ -104,57 +116,69 @@
     window.dataLayer = window.dataLayer || [];
 
      
-    CookieConsent.run({
-        guiOptions: {
-            consentModal: {
-                layout: 'box',
-                position: 'bottom right',
-                equalWeightButtons: true
-            },
-            settingsModal: {
-                layout: 'box',
-                position: 'left',
-                equalWeightButtons: true
-            }
-        },
-        categories: {
-            necessary: {
-                enabled: true,
-                readOnly: true
-            },
-            analytics: {}
-        },
-        language: {
-            default: 'it',
-            translations: {
-                it: {
+    document.addEventListener('DOMContentLoaded', function(){
+        console.log("CookieConsent: Inizializzazione in corso...");
+        
+        try {
+            CookieConsent.run({
+                guiOptions: {
                     consentModal: {
-                        title: 'Consenso Cookie',
-                        description: 'Utilizziamo i cookie per migliorare l\'esperienza e analizzare il traffico del blog.',
-                        acceptAllBtn: 'Accetta tutti',
-                        acceptNecessaryBtn: 'Rifiuta tutti',
-                        showSettingsBtn: 'Gestisci preferenze'
+                        layout: 'box',
+                        position: 'bottom right',
+                        equalWeightButtons: true
                     },
-                    settingsModal: {
-                        title: 'Preferenze Cookie',
-                        saveSettingsBtn: 'Salva impostazioni',
-                        acceptAllBtn: 'Accetta tutti',
-                        rejectAllBtn: 'Rifiuta tutti',
-                        closeIconLabel: 'Chiudi',
-                        blocks: [
-                            {
-                                title: 'Cookie tecnici',
-                                description: 'Questi cookie sono necessari per il funzionamento del sito.'
+                    preferencesModal: {
+                        layout: 'box',
+                        position: 'right',
+                        equalWeightButtons: true
+                    }
+                },
+                categories: {
+                    necessary: {
+                        enabled: true,
+                        readOnly: true
+                    },
+                    analytics: {
+                        enabled: false,
+                        readOnly: false
+                    }
+                },
+                language: {
+                    default: 'it',
+                    translations: {
+                        it: {
+                            consentModal: {
+                                title: 'Consenso Cookie',
+                                description: 'Utilizziamo i cookie per migliorare l\'esperienza e analizzare il traffico del blog. Per maggiori informazioni, consulta la nostra <a href="/privacy-policy/" target="_blank">Privacy Policy</a>.',
+                                acceptAllBtn: 'Accetta tutti',
+                                acceptNecessaryBtn: 'Rifiuta tutti',
+                                showPreferencesBtn: 'Gestisci preferenze'
                             },
-                            {
-                                title: 'Cookie analitici',
-                                description: 'Ci aiutano a capire come i visitatori interagiscono con il sito.',
-                                category: 'analytics'
+                            preferencesModal: {
+                                title: 'Preferenze Cookie',
+                                savePreferencesBtn: 'Salva impostazioni',
+                                acceptAllBtn: 'Accetta tutti',
+                                acceptNecessaryBtn: 'Rifiuta tutti',
+                                closeIconLabel: 'Chiudi',
+                                sections: [
+                                    {
+                                        title: 'Cookie tecnici',
+                                        description: 'Questi cookie sono necessari per il funzionamento del sito.'
+                                    },
+                                    {
+                                        title: 'Cookie analitici',
+                                        description: 'Ci aiutano a capire come i visitatori interagiscono con il sito.',
+                                        linkedCategory: 'analytics'
+                                    }
+                                ]
                             }
-                        ]
+                        },
                     }
                 }
-            }
+            });
+            console.log("CookieConsent: Configurazione caricata.");
+        } catch (e) {
+            console.error("CookieConsent: Errore durante l'esecuzione:", e);
         }
     });
 </script>
@@ -206,6 +230,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     Posts
   </h1>
 </header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Occhi Aperti (e biscotti)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Si continua.
+Perché ogni avventura che si rispetti, a un certo punto, ha bisogno anche di… osservare. Capire. Studiare cosa succede dietro le quinte.
+Abbiamo quindi aggiunto un paio di strumenti che, sì, suonano molto meno epici di una spada leggendaria, ma che fanno comunque il loro sporco lavoro:
+Analytics, per vedere chi passa di qui e cosa combina Tag Manager, per tenere tutto sotto controllo senza impazzire ogni volta Insomma, meno magia e più numeri. Ma servono.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-17 10:38:24 +0200 CEST'>April 17, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Occhi Aperti (e biscotti)" href="http://localhost:1313/posts/occhi-aperti-e-biscotti/"></a>
+</article>
 
 <article class="post-entry"> 
   <header class="entry-header">
@@ -304,46 +344,21 @@ Tutto maiuscolo, senza spazi. Niente compromessi, niente fraintendimenti.
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><div class="weather-rpg" id="weather-rpg" style="display: block; max-width: var(--main-width); margin: 20px auto 10px auto; padding: 10px var(--gap); border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border);">
-    <div style="display: flex; align-items: center; gap: 20px;">
-        <span id="w-icon" style="font-size: 3.5em; line-height: 1;">🌍</span>        
-        <div style="line-height: 1.4;">
-            <div id="w-fase" style="font-weight: 900; text-transform: uppercase; font-size: 1.2em; color: var(--secondary); letter-spacing: 1px;">
-                CARICAMENTO...
-            </div>          
-            <div id="w-desc" style="font-size: 1.1em; opacity: 0.9; font-style: italic;">
-                Sincronizzazione oracolo in corso...
-            </div>
-        </div>
-    </div>
-</div>
+</a><span id="cc-footer-link" style="display: none;">
+    <span style="opacity: 0.5; margin: 0 5px;">·</span>
+    <button type="button" onclick="CookieConsent.showPreferences()" style="background: none; border: none; text-decoration: underline; color: var(--secondary); cursor: pointer; font-size: inherit; font-family: inherit; padding: 0;">Preferenze Cookie</button>
+</span>
 
 <script>
-    async function updateWeather() {
-        try {
-            const res = await fetch('https://meteo-therpggame.antonino-ragusa-er.workers.dev/'); 
-            const d = await res.json();
-            
-            const icons = { "Sole forte": "☀️", "Cielo velato": "⛅", "Nebbia": "🌫️", "Pioggia": "🌧️", "Neve": "❄️", "Tempesta": "⛈️" };
-            
-            document.getElementById('w-icon').innerText = icons[d.meteo] || "🌍";
-            document.getElementById('w-fase').innerText = d.fase;
-            document.getElementById('w-desc').innerText = `${d.meteo} • ${d.temperatura} • Magia ${d.condizione_magica}`;
-            document.getElementById('weather-rpg').style.display = 'block';
-
-            
-            const header = document.querySelector('header.header');
-            if (header) {
-                header.after(document.getElementById('weather-rpg'));
-            }
-        } catch (e) { console.error("Meteo RPG offline"); }
-    }
-    updateWeather();
+    (function() {
+        var footer = document.querySelector('footer.footer');
+        var link = document.getElementById('cc-footer-link');
+        if (footer && link) {
+            footer.appendChild(link);
+            link.style.display = 'inline';
+        }
+    })();
 </script>
-
-<div style="text-align: center; margin: 20px auto;">
-    <button type="button" data-cc="show-settings" style="background: none; border: none; text-decoration: underline; color: var(--secondary); cursor: pointer; font-size: 0.8em; opacity: 0.7; font-family: inherit;">Preferenze Cookie</button>
-</div>
 
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLZMQ8SD"

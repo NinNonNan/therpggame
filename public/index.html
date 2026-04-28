@@ -225,9 +225,81 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </ul>
     </nav>
 </header>
-<main class="main"> 
+<div class="weather-rpg" id="weather-rpg" style="min-height: 100px; max-width: var(--main-width); margin: 20px auto 10px auto; padding: 10px var(--gap); border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border);">
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <span id="w-icon" style="font-size: 3.5em; line-height: 1;">🌍</span>        
+        <div style="line-height: 1.4;">
+            <div id="w-fase" style="font-weight: 900; text-transform: uppercase; font-size: 1.2em; color: var(--secondary); letter-spacing: 1px;">
+                CARICAMENTO...
+            </div>          
+            <div id="w-desc" style="font-size: 1.1em; opacity: 0.9; font-style: italic;">
+                Sincronizzazione oracolo in corso...
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function updateWeather() {
+        const CACHE_KEY = 'rpg_weather_data';
+        const CACHE_TIME = 'rpg_weather_expiry';
+        const TTL = 15 * 60 * 1000; 
+
+        const renderWeather = (d) => {
+            const icons = { "Sole forte": "☀️", "Cielo velato": "⛅", "Nebbia": "🌫️", "Pioggia": "🌧️", "Neve": "❄️", "Tempesta": "⛈️" };
+            const container = document.getElementById('weather-rpg');
+            
+            document.getElementById('w-icon').innerText = icons[d.meteo] || "🌍";
+            document.getElementById('w-fase').innerText = d.fase;
+            document.getElementById('w-desc').innerText = `${d.meteo} • ${d.temperatura} • Magia ${d.condizione_magica}`;
+        };
+
+        
+        const cachedData = localStorage.getItem(CACHE_KEY);
+        const cachedExpiry = localStorage.getItem(CACHE_TIME);
+
+        if (cachedData && cachedExpiry && Date.now() < parseInt(cachedExpiry)) {
+            renderWeather(JSON.parse(cachedData));
+            return;
+        }
+
+        
+        try {
+            const res = await fetch('https://meteo-therpggame.antonino-ragusa-er.workers.dev/');
+            if (!res.ok) throw new Error();
+            const d = await res.json();
+            
+            
+            localStorage.setItem(CACHE_KEY, JSON.stringify(d));
+            localStorage.setItem(CACHE_TIME, (Date.now() + TTL).toString());
+            
+            renderWeather(d);
+        } catch (e) { 
+            console.warn("Meteo RPG offline o lento"); 
+        }
+    }
+
+    
+    updateWeather();
+</script><main class="main"> 
 
 <article class="first-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Occhi Aperti (e biscotti)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Si continua.
+Perché ogni avventura che si rispetti, a un certo punto, ha bisogno anche di… osservare. Capire. Studiare cosa succede dietro le quinte.
+Abbiamo quindi aggiunto un paio di strumenti che, sì, suonano molto meno epici di una spada leggendaria, ma che fanno comunque il loro sporco lavoro:
+Analytics, per vedere chi passa di qui e cosa combina Tag Manager, per tenere tutto sotto controllo senza impazzire ogni volta Insomma, meno magia e più numeri. Ma servono.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-17 10:38:24 +0200 CEST'>April 17, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Occhi Aperti (e biscotti)" href="http://localhost:1313/posts/occhi-aperti-e-biscotti/"></a>
+</article>
+
+<article class="post-entry"> 
   <header class="entry-header">
     <h2 class="entry-hint-parent">Nuova Release
     </h2>
@@ -324,44 +396,7 @@ Tutto maiuscolo, senza spazi. Niente compromessi, niente fraintendimenti.
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><div class="weather-rpg" id="weather-rpg" style="display: block; max-width: var(--main-width); margin: 20px auto 10px auto; padding: 10px var(--gap); border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border);">
-    <div style="display: flex; align-items: center; gap: 20px;">
-        <span id="w-icon" style="font-size: 3.5em; line-height: 1;">🌍</span>        
-        <div style="line-height: 1.4;">
-            <div id="w-fase" style="font-weight: 900; text-transform: uppercase; font-size: 1.2em; color: var(--secondary); letter-spacing: 1px;">
-                CARICAMENTO...
-            </div>          
-            <div id="w-desc" style="font-size: 1.1em; opacity: 0.9; font-style: italic;">
-                Sincronizzazione oracolo in corso...
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    async function updateWeather() {
-        try {
-            const res = await fetch('https://meteo-therpggame.antonino-ragusa-er.workers.dev/'); 
-            const d = await res.json();
-            
-            const icons = { "Sole forte": "☀️", "Cielo velato": "⛅", "Nebbia": "🌫️", "Pioggia": "🌧️", "Neve": "❄️", "Tempesta": "⛈️" };
-            
-            document.getElementById('w-icon').innerText = icons[d.meteo] || "🌍";
-            document.getElementById('w-fase').innerText = d.fase;
-            document.getElementById('w-desc').innerText = `${d.meteo} • ${d.temperatura} • Magia ${d.condizione_magica}`;
-            document.getElementById('weather-rpg').style.display = 'block';
-
-            
-            const header = document.querySelector('header.header');
-            if (header) {
-                header.after(document.getElementById('weather-rpg'));
-            }
-        } catch (e) { console.error("Meteo RPG offline"); }
-    }
-    updateWeather();
-</script>
-
-<span id="cc-footer-link" style="display: none;">
+</a><span id="cc-footer-link" style="display: none;">
     <span style="opacity: 0.5; margin: 0 5px;">·</span>
     <button type="button" onclick="CookieConsent.showPreferences()" style="background: none; border: none; text-decoration: underline; color: var(--secondary); cursor: pointer; font-size: inherit; font-family: inherit; padding: 0;">Preferenze Cookie</button>
 </span>
@@ -443,5 +478,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </script>
 </body>
-
 </html>

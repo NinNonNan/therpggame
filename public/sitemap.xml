@@ -3,15 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-04-16T10:00:00+02:00</lastmod>
+    <lastmod>2026-04-17T10:38:24+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/occhi-aperti-e-biscotti/</loc>
+    <lastmod>2026-04-17T10:38:24+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-04-17T10:38:24+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/privacy-policy/</loc>
     <lastmod>2026-04-16T10:00:00+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/nuova-release/</loc>
-    <lastmod>2026-04-15T16:37:58+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-04-15T16:37:58+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/piccole-cose/</loc>

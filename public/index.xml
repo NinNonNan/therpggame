@@ -6,8 +6,22 @@
     <description>Recent content on ILGDR! Devblog</description>
     <generator>Hugo</generator>
     <language>it-it</language>
-    <lastBuildDate>Thu, 16 Apr 2026 10:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 10:38:24 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Occhi Aperti (e biscotti)</title>
+      <link>http://localhost:1313/posts/occhi-aperti-e-biscotti/</link>
+      <pubDate>Fri, 17 Apr 2026 10:38:24 +0200</pubDate>
+      <guid>http://localhost:1313/posts/occhi-aperti-e-biscotti/</guid>
+      <description>&lt;p&gt;Si continua.&lt;/p&gt;
+&lt;p&gt;Perché ogni avventura che si rispetti, a un certo punto, ha bisogno anche di… osservare. Capire. Studiare cosa succede dietro le quinte.&lt;/p&gt;
+&lt;p&gt;Abbiamo quindi aggiunto un paio di strumenti che, sì, suonano molto meno epici di una spada leggendaria, ma che fanno comunque il loro sporco lavoro:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Analytics, per vedere chi passa di qui e cosa combina&lt;/li&gt;
+&lt;li&gt;Tag Manager, per tenere tutto sotto controllo senza impazzire ogni volta&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Insomma, meno magia e più numeri. Ma servono.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Privacy Policy e Cookie Policy</title>
       <link>http://localhost:1313/privacy-policy/</link>
