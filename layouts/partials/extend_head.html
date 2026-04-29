@@ -1,3 +1,17 @@
+<!-- Meta Descrizione e SEO per Crawler -->
+{{- $description := .Description | default .Summary | plainify | truncate 160 -}}
+{{- if not $description -}}
+    {{- $description = .Site.Params.description -}}
+{{- end -}}
+<meta name="description" content="{{ $description }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
 <!-- Cookie Consent -->
 <link rel="stylesheet" href="/cookieconsent.css">
 
@@ -44,8 +58,14 @@
 
     /** Attendi che il DOM sia pronto */
     document.addEventListener('DOMContentLoaded', function(){
-        console.log("CookieConsent: Inizializzazione in corso...");
+        console.log("CookieConsent: Tentativo di inizializzazione...");
         
+        /** Verifica se l'oggetto CookieConsent è definito (evita ReferenceError) */
+        if (typeof CookieConsent === 'undefined') {
+            console.error("CookieConsent: La libreria non è stata caricata (possibile errore di sintassi nel file JS).");
+            return;
+        }
+
         try {
             CookieConsent.run({
                 guiOptions: {
