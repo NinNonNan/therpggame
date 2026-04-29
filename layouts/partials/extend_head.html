@@ -1,5 +1,5 @@
 <!-- Cookie Consent -->
-<link rel="stylesheet" href="/css/cookieconsent.css">
+<link rel="stylesheet" href="/cookieconsent.css">
 
 <style>
     /* Personalizzazione per adattarlo allo stile RPG del blog */
@@ -36,7 +36,7 @@
 </style>
 
 <!-- Caricamento Libreria Cookie Consent v3 -->
-<script src="/js/cookieconsent.umd.js" defer></script>
+<script src="/cookieconsent.umd.js" defer></script>
 
 <script>
     /** Inizializza dataLayer per GTM */
@@ -104,6 +104,14 @@
                 }
             });
             console.log("CookieConsent: Configurazione caricata.");
+
+            // Allega il gestore eventi al pulsante delle preferenze dopo che CookieConsent è inizializzato
+            const preferencesBtn = document.getElementById('cc-preferences-btn');
+            if (preferencesBtn) {
+                preferencesBtn.addEventListener('click', function() {
+                    CookieConsent.showPreferences();
+                });
+            }
         } catch (e) {
             console.error("CookieConsent: Errore durante l'esecuzione:", e);
         }

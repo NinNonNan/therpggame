@@ -71,7 +71,7 @@
     }
 
 </script>
-<link rel="stylesheet" href="/css/cookieconsent.css">
+<link rel="stylesheet" href="/cookieconsent.css">
 
 <style>
      
@@ -108,7 +108,7 @@
 </style>
 
 
-<script src="/js/cookieconsent.umd.js" defer></script>
+<script src="/cookieconsent.umd.js" defer></script>
 
 <script>
      
@@ -176,6 +176,14 @@
                 }
             });
             console.log("CookieConsent: Configurazione caricata.");
+
+            
+            const preferencesBtn = document.getElementById('cc-preferences-btn');
+            if (preferencesBtn) {
+                preferencesBtn.addEventListener('click', function() {
+                    CookieConsent.showPreferences();
+                });
+            }
         } catch (e) {
             console.error("CookieConsent: Errore durante l'esecuzione:", e);
         }
@@ -298,7 +306,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </svg>
 </a><span id="cc-footer-link" style="display: none;">
     <span style="opacity: 0.5; margin: 0 5px;">·</span>
-    <button type="button" onclick="CookieConsent.showPreferences()" style="background: none; border: none; text-decoration: underline; color: var(--secondary); cursor: pointer; font-size: inherit; font-family: inherit; padding: 0;">Preferenze Cookie</button>
+    <button type="button" id="cc-preferences-btn" style="background: none; border: none; text-decoration: underline; color: var(--secondary); cursor: pointer; font-size: inherit; font-family: inherit; padding: 0;">Preferenze Cookie</button>
 </span>
 
 <script>

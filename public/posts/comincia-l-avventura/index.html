@@ -76,7 +76,7 @@ Tutto maiuscolo, senza spazi. Niente compromessi, niente fraintendimenti.">
     }
 
 </script>
-<link rel="stylesheet" href="/css/cookieconsent.css">
+<link rel="stylesheet" href="/cookieconsent.css">
 
 <style>
      
@@ -113,7 +113,7 @@ Tutto maiuscolo, senza spazi. Niente compromessi, niente fraintendimenti.">
 </style>
 
 
-<script src="/js/cookieconsent.umd.js" defer></script>
+<script src="/cookieconsent.umd.js" defer></script>
 
 <script>
      
@@ -181,6 +181,14 @@ Tutto maiuscolo, senza spazi. Niente compromessi, niente fraintendimenti.">
                 }
             });
             console.log("CookieConsent: Configurazione caricata.");
+
+            
+            const preferencesBtn = document.getElementById('cc-preferences-btn');
+            if (preferencesBtn) {
+                preferencesBtn.addEventListener('click', function() {
+                    CookieConsent.showPreferences();
+                });
+            }
         } catch (e) {
             console.error("CookieConsent: Errore durante l'esecuzione:", e);
         }
@@ -365,7 +373,7 @@ Tutto maiuscolo, senza spazi. Niente compromessi, niente fraintendimenti.</p>
     </svg>
 </a><span id="cc-footer-link" style="display: none;">
     <span style="opacity: 0.5; margin: 0 5px;">·</span>
-    <button type="button" onclick="CookieConsent.showPreferences()" style="background: none; border: none; text-decoration: underline; color: var(--secondary); cursor: pointer; font-size: inherit; font-family: inherit; padding: 0;">Preferenze Cookie</button>
+    <button type="button" id="cc-preferences-btn" style="background: none; border: none; text-decoration: underline; color: var(--secondary); cursor: pointer; font-size: inherit; font-family: inherit; padding: 0;">Preferenze Cookie</button>
 </span>
 
 <script>
