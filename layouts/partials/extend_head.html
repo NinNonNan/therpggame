@@ -13,7 +13,9 @@
 <meta property="og:site_name" content="{{ .Site.Title }}">
 
 <!-- Cookie Consent -->
-<link rel="stylesheet" href="/cookieconsent.css">
+<!-- <link rel="stylesheet" href="/cookieconsent.css"> -->
+<link rel="preload" href="/cookieconsent.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/cookieconsent.css"></noscript>
 
 <style>
     /* Personalizzazione per adattarlo allo stile RPG del blog */
