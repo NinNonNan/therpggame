@@ -4,6 +4,9 @@ title = 'ILGDR! Devblog'
 theme = 'PaperMod'
 
 [params]
+    # Descrizione per il Meta
+    description = "Il devblog ufficiale di ILGDR! - Un viaggio nello sviluppo di un GDR testuale unico."
+
     # Indichiamo a PaperMod dove sono i post per la Home Page
     mainSections = ["posts"]
     
