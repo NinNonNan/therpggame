@@ -5,6 +5,7 @@ title = 'Lettere dal buio'
 +++
 
 Ci sono idee che fanno rumore.
+
 E poi ci sono quelle che arrivano in silenzio.
 
 Negli ultimi giorni ho aggiunto qualcosa a **ILGDR!** che appartiene decisamente alla seconda categoria.
@@ -25,5 +26,7 @@ Per ora mi fermo qui.
 Il resto… arriverà da sé.
 
 Oppure no.
+
+*Il team di sviluppo*, cioè IO!
 
 {{< links >}}
