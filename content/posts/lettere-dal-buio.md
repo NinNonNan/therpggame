@@ -26,4 +26,4 @@ Il resto… arriverà da sé.
 
 Oppure no.
 
-{< links >}
+{{< links >}}
