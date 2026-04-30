@@ -75,8 +75,23 @@ Ho sistemato anche quelli: nella prossima versione dovrebbe essere tutto molto p
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script>
-<link rel="stylesheet" href="/cookieconsent.css">
+</script><meta name="description" content="Nessun aggiornamento a breve… o forse sì? Vedremo più tardi 👀
+Nel frattempo ho sistemato un paio di cose.
+Qualcuno era riuscito a impugnare due asce a due mani …">
+
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/posts/piccole-cose/">
+<meta property="og:title" content="Piccole Cose | ILGDR! Devblog">
+<meta property="og:description" content="Nessun aggiornamento a breve… o forse sì? Vedremo più tardi 👀
+Nel frattempo ho sistemato un paio di cose.
+Qualcuno era riuscito a impugnare due asce a due mani …">
+<meta property="og:site_name" content="ILGDR! Devblog">
+
+
+
+<link rel="preload" href="/cookieconsent.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/cookieconsent.css"></noscript>
 
 <style>
      
@@ -121,8 +136,14 @@ Ho sistemato anche quelli: nella prossima versione dovrebbe essere tutto molto p
 
      
     document.addEventListener('DOMContentLoaded', function(){
-        console.log("CookieConsent: Inizializzazione in corso...");
+        console.log("CookieConsent: Tentativo di inizializzazione...");
         
+         
+        if (typeof CookieConsent === 'undefined') {
+            console.error("CookieConsent: La libreria non è stata caricata (possibile errore di sintassi nel file JS).");
+            return;
+        }
+
         try {
             CookieConsent.run({
                 guiOptions: {
@@ -195,6 +216,11 @@ Ho sistemato anche quelli: nella prossima versione dovrebbe essere tutto molto p
     });
 </script>
 
+
+
+<link rel="stylesheet" href="/css/scrittoio.css?v=1.2">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -368,6 +394,8 @@ Ci sono ancora un sacco di idee da infilare dentro il gioco… e magari anche qu
         <path d="M12 6H0l6-6z" />
     </svg>
 </a><span id="cc-footer-link" style="display: none;">
+    <span style="opacity: 0.5; margin: 0 5px;">·</span>
+    <a href="/scrittoio/" style="text-decoration: underline; color: var(--secondary); font-size: inherit; font-family: inherit;">Scrittoio</a>
     <span style="opacity: 0.5; margin: 0 5px;">·</span>
     <button type="button" id="cc-preferences-btn" style="background: none; border: none; text-decoration: underline; color: var(--secondary); cursor: pointer; font-size: inherit; font-family: inherit; padding: 0;">Preferenze Cookie</button>
 </span>

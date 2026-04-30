@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Scrittoio Ministeriale on ILGDR! Devblog</title>
+    <link>http://localhost:1313/scrittoio/</link>
+    <description>Recent content in Scrittoio Ministeriale on ILGDR! Devblog</description>
+    <generator>Hugo</generator>
+    <language>it-it</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/scrittoio/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

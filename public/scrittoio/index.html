@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Tags | ILGDR! Devblog</title>
+<title>Scrittoio Ministeriale | ILGDR! Devblog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Il devblog ufficiale di ILGDR! - Un viaggio nello sviluppo di un GDR testuale unico.">
+<meta name="description" content="Scrittoio Ministeriale - ILGDR! Devblog">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/tags/">
+<link rel="canonical" href="http://localhost:1313/scrittoio/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.4ef2299ae814559c4055cd3d15919aff78737e44fa7af337c506246832ba458a.css" integrity="sha256-TvIpmugUVZxAVc09FZGa/3hzfkT6evM3xQYkaDK6RYo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/scrittoio/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/scrittoio/">
 <noscript>
     <style>
         #theme-toggle,
@@ -75,8 +75,8 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:1313/tags/">
-<meta property="og:title" content="Tags | ILGDR! Devblog">
+<meta property="og:url" content="http://localhost:1313/scrittoio/">
+<meta property="og:title" content="Scrittoio Ministeriale | ILGDR! Devblog">
 <meta property="og:description" content="Il devblog ufficiale di ILGDR! - Un viaggio nello sviluppo di un GDR testuale unico.">
 <meta property="og:site_name" content="ILGDR! Devblog">
 
@@ -311,12 +311,217 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     updateWeather();
 </script><main class="main">
-<header class="page-header">
-    <h1>Tags</h1>
-</header>
+<div class="scrittoio-wrapper">
+    <div class="bureau-header">
+        MINISTERO DELLE CORRISPONDENZE • SEZIONE EPISTOLARE
+    </div>
 
-<ul class="terms-tags">
-</ul>
+    <h1 class="bureau-title">Scrittoio Ministeriale</h1>
+
+    <div class="scrittoio-container">
+
+        <div class="scrittoio-tabs">
+            <button class="bureau-btn active" data-tab="inbox">Archivio (Inbox)</button>
+            <button class="bureau-btn" data-tab="outbox">In Uscita (Outbox)</button>
+            <button class="bureau-btn" data-tab="new">Nuova Missiva</button>
+            <button class="bureau-btn" id="btn-logout" style="margin-left: auto; border-color: #8b0000; color: #8b0000;">Esci</button>
+        </div>
+
+        <div id="scrittoio-content">
+            <p class="bureau-loading">In attesa di autorizzazione burocratica...</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    const supabaseUrl = 'https://fmwwjpvadrqmiqgekqva.supabase.co'; 
+    const supabaseKey = 'sb_publishable_NGx5mKI4wVF_r3qluEJCqQ_I8a45xYn';
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+    let currentUser = null;
+    let currentProfile = null;
+
+    function initTabs() {
+        document.querySelectorAll('.scrittoio-tabs .bureau-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const tab = e.currentTarget.getAttribute('data-tab');
+                switchTab(tab, e.currentTarget);
+            });
+        });
+    }
+
+    async function initScrittoio() {
+        const contentDiv = document.getElementById('scrittoio-content');
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        const errorDescription = urlParams.get('error_description');
+
+        if (error) {
+            console.error("Errore OAuth:", error, errorDescription);
+            showError(`Errore di autenticazione: ${errorDescription || error}`);
+            return;
+        }
+
+        
+        supabaseClient.auth.onAuthStateChange(async (event, session) => {
+            console.log("Auth Event:", event);
+            
+            if (session) {
+                
+                if (!currentUser || currentUser.id !== session.user.id) {
+                    await processAuthSession(session);
+                }
+            } else if (!window.location.hash.includes('access_token')) {
+                showLoginPrompt();
+            }
+        });
+
+        
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (session && (!currentUser || currentUser.id !== session.user.id)) {
+            await processAuthSession(session);
+        }
+    }
+
+    async function processAuthSession(session) {
+        currentUser = session.user;
+        
+        
+        if (window.location.hash.includes('access_token')) {
+            window.history.replaceState(null, null, window.location.pathname);
+        }
+
+        const { data: profile, error } = await supabaseClient
+            .from('profiles')
+            .select('*')
+            .eq('id', currentUser.id)
+            .single();
+
+        if (error || !profile) {
+            showProfileCreation();
+        } else {
+            currentProfile = profile;
+            loadInbox();
+        }
+    }
+
+    function showError(message) {
+        const container = document.getElementById('scrittoio-content');
+        container.innerHTML = `
+            <div class="bureau-error">
+                <p>COMUNICAZIONE INTERROTTA</p>
+                <p style="font-size: 0.8em; margin-bottom: 20px;">${message}</p>
+                <button class="bureau-btn" onclick="window.location.href='/scrittoio/'">Riprova</button>
+            </div>
+        `;
+    }
+
+    function showLoginPrompt() {
+        const container = document.getElementById('scrittoio-content');
+        container.innerHTML = `
+            <div class="bureau-auth-prompt">
+                <p>IDENTIFICAZIONE NECESSARIA</p>
+                <p style="font-size: 0.8em; margin-bottom: 20px;">Presentarsi all'ufficio competente per il rilascio del lasciapassare.</p>
+                <button class="bureau-btn" id="btn-login-discord">Identificati con Discord</button>
+            </div>
+        `;
+        document.getElementById('btn-login-discord').addEventListener('click', () => {
+            supabaseClient.auth.signInWithOAuth({
+                provider: 'discord',
+                options: {
+                    redirectTo: window.location.origin + window.location.pathname
+                }
+            });
+        });
+    }
+
+    function showProfileCreation() {
+        const container = document.getElementById('scrittoio-content');
+        container.innerHTML = `
+            <div class="bureau-profile-setup">
+                <p>REGISTRAZIONE PROTOCOLLO</p>
+                <p style="font-size: 0.8em;">Inserire il nome del personaggio per la corrispondenza epistolare.</p>
+                <input type="text" id="char-name" class="bureau-input" placeholder="Nome Personaggio..." maxlength="30" />
+                <button class="bureau-btn" id="btn-save-profile" style="margin-top:20px">Crea Profilo</button>
+            </div>
+        `;
+        document.getElementById('btn-save-profile').addEventListener('click', async () => {
+            const name = document.getElementById('char-name').value.trim();
+            if (name.length < 3) return alert("Nome troppo breve");
+            
+            const { error } = await supabaseClient
+                .from('profiles')
+                .insert([{ id: currentUser.id, character_name: name }]);
+            
+            if (error) alert("Errore: il nome potrebbe essere già occupato o il servizio è offline.");
+            else window.location.reload();
+        });
+    }
+
+    async function loadInbox() {
+        if (!currentUser) return;
+        
+        const { data, error } = await supabaseClient
+            .from('letters')
+            .select('*, profiles:sender_id(character_name)')
+            .eq('recipient_id', currentUser.id)
+            .order('created_at', { ascending: false });
+
+        let html = '<div class="bureau-list">';
+        if (data && data.length === 0) html += '<p>Nessuna missiva presente in archivio.</p>';
+        if (data && data.length > 0) {
+            data.forEach(l => {
+                html += `
+                    <div class="letter-item">
+                        <span class="letter-sender">MITTENTE: ${l.profiles ? l.profiles.character_name : 'Ignoto'}</span>
+                        <span class="letter-date">${new Date(l.created_at).toLocaleDateString('it-IT')}</span>
+                    </div>`;
+            });
+        }
+        html += '</div>';
+        document.getElementById('scrittoio-content').innerHTML = html;
+    }
+
+    async function handleLogout() {
+        await supabaseClient.auth.signOut();
+        currentUser = null;
+        currentProfile = null;
+        window.location.reload();
+    }
+
+    function switchTab(tab, element) {
+        if (!currentProfile) return;
+        document.querySelectorAll('.bureau-btn').forEach(b => b.classList.remove('active'));
+        element.classList.add('active');
+        
+        if (tab === 'inbox') loadInbox();
+        if (tab === 'new') showNewLetterForm();
+    }
+
+    function showNewLetterForm() {
+        document.getElementById('scrittoio-content').innerHTML = `
+            <div class="bureau-form">
+                <p>NUOVA MISSIVA</p>
+                <p style="font-style:italic">Ufficio postale momentaneamente chiuso per sciopero ministeriale.</p>
+            </div>
+        `;
+    }
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        initTabs();
+        
+        const logoutBtn = document.getElementById('btn-logout');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', handleLogout);
+        }
+
+        initScrittoio();
+    });
+</script>
+
     </main>
     
 <footer class="footer">

@@ -1,0 +1,7 @@
++++
+title = 'Scrittoio Ministeriale'
+date = 2024-05-20T12:00:00+02:00
+draft = false
+layout = "list"
+type = "scrittoio"
++++

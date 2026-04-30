@@ -74,8 +74,21 @@ In conformità con il GDPR, hai il diritto di modificare o revocare il tuo conse
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script>
-<link rel="stylesheet" href="/cookieconsent.css">
+</script><meta name="description" content="Benvenuto nella pagina dedicata alla privacy di ILGDR! Devblog.
+1. Cookie e Tracciamento Utilizziamo cookie tecnici per far funzionare il sito e ricordarci le …">
+
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/privacy-policy/">
+<meta property="og:title" content="Privacy Policy e Cookie Policy | ILGDR! Devblog">
+<meta property="og:description" content="Benvenuto nella pagina dedicata alla privacy di ILGDR! Devblog.
+1. Cookie e Tracciamento Utilizziamo cookie tecnici per far funzionare il sito e ricordarci le …">
+<meta property="og:site_name" content="ILGDR! Devblog">
+
+
+
+<link rel="preload" href="/cookieconsent.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/cookieconsent.css"></noscript>
 
 <style>
      
@@ -120,8 +133,14 @@ In conformità con il GDPR, hai il diritto di modificare o revocare il tuo conse
 
      
     document.addEventListener('DOMContentLoaded', function(){
-        console.log("CookieConsent: Inizializzazione in corso...");
+        console.log("CookieConsent: Tentativo di inizializzazione...");
         
+         
+        if (typeof CookieConsent === 'undefined') {
+            console.error("CookieConsent: La libreria non è stata caricata (possibile errore di sintassi nel file JS).");
+            return;
+        }
+
         try {
             CookieConsent.run({
                 guiOptions: {
@@ -194,6 +213,11 @@ In conformità con il GDPR, hai il diritto di modificare o revocare il tuo conse
     });
 </script>
 
+
+
+<link rel="stylesheet" href="/css/scrittoio.css?v=1.2">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -339,6 +363,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <path d="M12 6H0l6-6z" />
     </svg>
 </a><span id="cc-footer-link" style="display: none;">
+    <span style="opacity: 0.5; margin: 0 5px;">·</span>
+    <a href="/scrittoio/" style="text-decoration: underline; color: var(--secondary); font-size: inherit; font-family: inherit;">Scrittoio</a>
     <span style="opacity: 0.5; margin: 0 5px;">·</span>
     <button type="button" id="cc-preferences-btn" style="background: none; border: none; text-decoration: underline; color: var(--secondary); cursor: pointer; font-size: inherit; font-family: inherit; padding: 0;">Preferenze Cookie</button>
 </span>
