@@ -1,7 +1,7 @@
 +++
 date = '2026-04-30T11:00:00+02:00'
 draft = false
-title = "Lettere dal buio"
+title = 'Lettere dal buio'
 +++
 
 Ci sono idee che fanno rumore.
