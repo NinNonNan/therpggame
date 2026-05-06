@@ -1,18 +1,52 @@
+/*
 .nav {
   display: flex;
   gap: 20px;
 }
 
-/* ogni voce ha larghezza stabile */
 .nav a {
   display: inline-block;
-  min-width: 90px;   /* <- chiave del fix */
+  min-width: 90px;
   text-align: center;
   font-weight: 400;
   white-space: nowrap;
 }
 
-/* stato attivo */
 .nav a.active {
   font-weight: 700;
+}
+*/
+
+
+/* NAV BASE */
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* LINK NON influenza layout */
+.nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* IMPORTANTISSIMO: lo span NON deve cambiare layout */
+.nav a span {
+  font-weight: 400;
+}
+
+/* ACTIVE span: niente bold */
+.nav a span.active {
+  font-weight: 400 !important;
+  opacity: 0.75;
+}
+
+/* underline SOLO hover */
+.nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
