@@ -2,38 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/lettere-dal-buio/</loc>
+    <lastmod>2026-04-30T11:00:00+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2026-04-30T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/lettere-dal-buio/lettere-dal-buio/</loc>
+    <lastmod>2026-04-30T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ilgdr/</loc>
     <lastmod>2026-04-17T10:38:24+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/occhi-aperti-e-biscotti/</loc>
-    <lastmod>2026-04-17T10:38:24+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://localhost:1313/ilgdr/occhi-aperti-e-biscotti/</loc>
     <lastmod>2026-04-17T10:38:24+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/privacy-policy/</loc>
     <lastmod>2026-04-16T10:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/nuova-release/</loc>
+    <loc>http://localhost:1313/ilgdr/nuova-release/</loc>
     <lastmod>2026-04-15T16:37:58+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/piccole-cose/</loc>
+    <loc>http://localhost:1313/ilgdr/piccole-cose/</loc>
     <lastmod>2026-04-15T11:00:24+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/me-lo-offri-un-caffe/</loc>
+    <loc>http://localhost:1313/ilgdr/me-lo-offri-un-caffe/</loc>
     <lastmod>2026-04-14T10:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/dammi-la-beta/</loc>
+    <loc>http://localhost:1313/ilgdr/dammi-la-beta/</loc>
     <lastmod>2026-04-10T11:09:32+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/comincia-l-avventura/</loc>
+    <loc>http://localhost:1313/tags/android/</loc>
+    <lastmod>2026-04-09T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ilgdr/comincia-l-avventura/</loc>
+    <lastmod>2026-04-09T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/gamedev/</loc>
+    <lastmod>2026-04-09T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/godot/</loc>
+    <lastmod>2026-04-09T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/rpg/</loc>
+    <lastmod>2026-04-09T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-04-09T11:00:00+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/scrittoio/</loc>
     <lastmod>2024-05-20T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/lettere-dal-buio/comincia-l-avventura/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/lettere-dal-buio/dammi-la-beta/</loc>
+  </url><url>
+    <loc>http://localhost:1313/minecraft-server/</loc>
   </url>
 </urlset>

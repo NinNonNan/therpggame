@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Gamedev on ILGDR! Devblog</title>
+    <link>http://localhost:1313/tags/gamedev/</link>
+    <description>Recent content in Gamedev on ILGDR! Devblog</description>
+    <generator>Hugo</generator>
+    <language>it-it</language>
+    <lastBuildDate>Thu, 09 Apr 2026 11:00:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gamedev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comincia l&#39;avventura</title>
+      <link>http://localhost:1313/ilgdr/comincia-l-avventura/</link>
+      <pubDate>Thu, 09 Apr 2026 11:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/ilgdr/comincia-l-avventura/</guid>
+      <description>&lt;p&gt;Si comincia.&lt;/p&gt;
+&lt;p&gt;Quello che spero possa essere l’inizio di un lungo viaggio (come cantava Bilbo), un unico gioco capace di contenere tutto ciò che negli anni ho apprezzato, sperimentato e vissuto.&lt;/p&gt;
+&lt;p&gt;Un, anzi &lt;em&gt;IL&lt;/em&gt; GDR.&lt;/p&gt;
+&lt;p&gt;Un gioco dalla grafica praticamente inesistente — e quando c’è, a volte è pure bruttina — ma che, nelle intenzioni, vuole provare a dire qualcosa.&lt;/p&gt;
+&lt;p&gt;Lo intitolo, con molta modestia: &lt;strong&gt;ILGDR!&lt;/strong&gt;&lt;br&gt;
+Tutto maiuscolo, senza spazi. Niente compromessi, niente fraintendimenti.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

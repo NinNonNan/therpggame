@@ -1,0 +1,10 @@
+{{ $section := .Get 0 }}
+{{ $limit := (.Get 1 | default 3 | int) }}
+
+<ul>
+{{ range first $limit (where site.RegularPages "Section" $section).ByDate.Reverse }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </li>
+{{ end }}
+</ul>

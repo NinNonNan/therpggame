@@ -10,7 +10,7 @@
 <meta name="description" content="Scrittoio Ministeriale - ILGDR! Devblog">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/scrittoio/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.4ef2299ae814559c4055cd3d15919aff78737e44fa7af337c506246832ba458a.css" integrity="sha256-TvIpmugUVZxAVc09FZGa/3hzfkT6evM3xQYkaDK6RYo=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5679a5057fe0982a292bfb3a32a17191c4970af58ce6a76deb3782300a8e6c1e.css" integrity="sha256-VnmlBX/gmCopK/s6MqFxkcSXCvWM5qdt6zeCMAqObB4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -251,6 +251,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </div>
         <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/ilgdr/" title="ILGDR!">
+                    <span>ILGDR!</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/minecraft-server/" title="Minecraft">
+                    <span>Minecraft</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/lettere-dal-buio/" title="???">
+                    <span>???</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -413,9 +428,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="bureau-error">
                 <p>COMUNICAZIONE INTERROTTA</p>
                 <p style="font-size: 0.8em; margin-bottom: 20px;">${message}</p>
-                <button class="bureau-btn" onclick="window.location.href='/scrittoio/'">Riprova</button>
+                <button class="bureau-btn" id="btn-retry">Riprova</button>
             </div>
         `;
+        document.getElementById('btn-retry').addEventListener('click', () => {
+            window.location.href = '/scrittoio/';
+        });
     }
 
     function showLoginPrompt() {
@@ -484,6 +502,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         document.getElementById('scrittoio-content').innerHTML = html;
     }
 
+    async function loadOutbox() {
+        if (!currentUser) return;
+        
+        const { data, error } = await supabaseClient
+            .from('letters')
+            .select('*, profiles:recipient_id(character_name)')
+            .eq('sender_id', currentUser.id)
+            .order('created_at', { ascending: false });
+
+        let html = '<div class="bureau-list">';
+        if (data && data.length === 0) html += '<p>Nessuna missiva inviata.</p>';
+        if (data && data.length > 0) {
+            data.forEach(l => {
+                html += `
+                    <div class="letter-item">
+                        <span class="letter-sender">A: ${l.profiles ? l.profiles.character_name : 'Ignoto'}</span>
+                        <span class="letter-date">${new Date(l.created_at).toLocaleDateString('it-IT')}</span>
+                    </div>`;
+            });
+        }
+        html += '</div>';
+        document.getElementById('scrittoio-content').innerHTML = html;
+    }
+
     async function handleLogout() {
         await supabaseClient.auth.signOut();
         currentUser = null;
@@ -497,6 +539,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         element.classList.add('active');
         
         if (tab === 'inbox') loadInbox();
+        if (tab === 'outbox') loadOutbox();
         if (tab === 'new') showNewLetterForm();
     }
 

@@ -2,6 +2,7 @@
 date = '2026-04-09T11:00:00+02:00'
 draft = false
 title = "Comincia l'avventura"
+tags = ["godot","rpg","android","gamedev"]
 +++
 
 Si comincia.

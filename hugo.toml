@@ -8,7 +8,8 @@ theme = 'PaperMod'
     description = "Il devblog ufficiale di ILGDR! - Un viaggio nello sviluppo di un GDR testuale unico."
 
     # Indichiamo a PaperMod dove sono i post per la Home Page
-    mainSections = ["posts"]
+    # mainSections = ["ilgdr", "minecraft-server", "lettere-dal-buio"]
+    mainSections = []
     
     # Opzioni specifiche per PaperMod
     defaultTheme = "auto"
@@ -22,3 +23,23 @@ theme = 'PaperMod'
     [[params.socialIcons]]
     name = "kofi"
     url = "https://ko-fi.com/therpggame"
+
+[menu]
+
+  [[menu.main]]
+    name = "ILGDR!"
+    url = "/ilgdr/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Minecraft"
+    url = "/minecraft-server/"
+    weight = 2
+
+  [[menu.main]]
+    name = "???"
+    url = "/lettere-dal-buio/"
+    weight = 3
+
+[taxonomies]
+    tag = "tags"

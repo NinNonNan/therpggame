@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* ogni voce ha larghezza stabile */
+.nav a {
+  display: inline-block;
+  min-width: 90px;   /* <- chiave del fix */
+  text-align: center;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* stato attivo */
+.nav a.active {
+  font-weight: 700;
+}
