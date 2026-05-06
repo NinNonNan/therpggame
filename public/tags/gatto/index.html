@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=54543&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Gatto | ILGDR! Devblog</title>
+<meta name="keywords" content="">
+<meta name="description" content="Il devblog ufficiale di ILGDR! - Un viaggio nello sviluppo di un GDR testuale unico.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:54543/tags/gatto/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.41b63f367247a0e342a18607c13eab69be1fcdc758220ed524f2a4d50543197d.css" integrity="sha256-QbY/NnJHoONCoYYHwT6rab4fzcdYIg7VJPKk1QVDGX0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:54543/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:54543/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:54543/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:54543/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:54543/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:54543/tags/gatto/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:54543/tags/gatto/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta name="description" content="Il devblog ufficiale di ILGDR! - Un viaggio nello sviluppo di un GDR testuale unico.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:54543/tags/gatto/">
+<meta property="og:title" content="Gatto | ILGDR! Devblog">
+<meta property="og:description" content="Il devblog ufficiale di ILGDR! - Un viaggio nello sviluppo di un GDR testuale unico.">
+<meta property="og:site_name" content="ILGDR! Devblog">
+
+
+
+<link rel="preload" href="/cookieconsent.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/cookieconsent.css"></noscript>
+
+<style>
+     
+    #cc-main {
+         
+        --cc-bg: var(--theme, #fff);
+        --cc-primary-color: var(--secondary, #2d4156);
+        --cc-secondary-color: var(--content, #555);
+        
+        --cc-btn-primary-bg: var(--secondary, #333); 
+        --cc-btn-primary-text: var(--theme, #fff);
+        --cc-btn-primary-hover-bg: var(--tertiary, #000);
+
+        --cc-btn-secondary-bg: var(--tertiary, #eee);
+        --cc-btn-secondary-text: var(--secondary, #333);
+        --cc-btn-secondary-hover-bg: var(--border, #ddd);
+        
+         
+        --cc-modal-border-radius: 0px;
+        --cc-btn-border-radius: 2px;
+        --cc-separator-border-color: var(--border, #eee);
+        --cc-footer-bg: var(--tertiary, #f9f9f9);
+
+         
+        z-index: 9999999 !important;
+    }
+
+     
+    .dark #cc-main {
+        --cc-bg: var(--theme, #1a1a1a);
+        --cc-primary-color: var(--secondary, #eee);
+        --cc-footer-bg: #252525;
+    }
+</style>
+
+
+<script src="/cookieconsent.umd.js" defer></script>
+
+<script>
+     
+    window.dataLayer = window.dataLayer || [];
+
+     
+    document.addEventListener('DOMContentLoaded', function(){
+        console.log("CookieConsent: Tentativo di inizializzazione...");
+        
+         
+        if (typeof CookieConsent === 'undefined') {
+            console.error("CookieConsent: La libreria non è stata caricata (possibile errore di sintassi nel file JS).");
+            return;
+        }
+
+        try {
+            CookieConsent.run({
+                guiOptions: {
+                    consentModal: {
+                        layout: 'box',
+                        position: 'bottom right',
+                        equalWeightButtons: true
+                    },
+                    preferencesModal: {
+                        layout: 'box',
+                        position: 'right',
+                        equalWeightButtons: true
+                    }
+                },
+                categories: {
+                    necessary: {
+                        enabled: true,
+                        readOnly: true
+                    },
+                    analytics: {
+                        enabled: false,
+                        readOnly: false
+                    }
+                },
+                language: {
+                    default: 'it',
+                    translations: {
+                        it: {
+                            consentModal: {
+                                title: 'Consenso Cookie',
+                                description: 'Utilizziamo i cookie per migliorare l\'esperienza e analizzare il traffico del blog. Per maggiori informazioni, consulta la nostra <a href="/privacy-policy/" target="_blank">Privacy Policy</a>.',
+                                acceptAllBtn: 'Accetta tutti',
+                                acceptNecessaryBtn: 'Rifiuta tutti',
+                                showPreferencesBtn: 'Gestisci preferenze'
+                            },
+                            preferencesModal: {
+                                title: 'Preferenze Cookie',
+                                savePreferencesBtn: 'Salva impostazioni',
+                                acceptAllBtn: 'Accetta tutti',
+                                acceptNecessaryBtn: 'Rifiuta tutti',
+                                closeIconLabel: 'Chiudi',
+                                sections: [
+                                    {
+                                        title: 'Cookie tecnici',
+                                        description: 'Questi cookie sono necessari per il funzionamento del sito.'
+                                    },
+                                    {
+                                        title: 'Cookie analitici',
+                                        description: 'Ci aiutano a capire come i visitatori interagiscono con il sito.',
+                                        linkedCategory: 'analytics'
+                                    }
+                                ]
+                            }
+                        },
+                    }
+                }
+            });
+            console.log("CookieConsent: Configurazione caricata.");
+
+            
+            const preferencesBtn = document.getElementById('cc-preferences-btn');
+            if (preferencesBtn) {
+                preferencesBtn.addEventListener('click', function() {
+                    CookieConsent.showPreferences();
+                });
+            }
+        } catch (e) {
+            console.error("CookieConsent: Errore durante l'esecuzione:", e);
+        }
+    });
+</script>
+
+
+
+<link rel="stylesheet" href="/css/scrittoio.css?v=1.2">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NLZMQ8SD');</script>
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:54543/" accesskey="h" title="ILGDR! Devblog (Alt + H)">ILGDR! Devblog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:54543/ilgdr/" title="ILGDR!">
+                    <span>ILGDR!</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:54543/minecraft-server/" title="Minecraft">
+                    <span>Minecraft</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:54543/lettere-dal-buio/" title="???">
+                    <span>???</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="weather-rpg" id="weather-rpg" style="min-height: 100px; max-width: var(--main-width); margin: 20px auto 10px auto; padding: 10px var(--gap); border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border);">
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <span id="w-icon" style="font-size: 3.5em; line-height: 1;">🌍</span>        
+        <div style="line-height: 1.4;">
+            <div id="w-fase" style="font-weight: 900; text-transform: uppercase; font-size: 1.2em; color: var(--secondary); letter-spacing: 1px;">
+                CARICAMENTO...
+            </div>          
+            <div id="w-desc" style="font-size: 1.1em; opacity: 0.9; font-style: italic;">
+                Sincronizzazione oracolo in corso...
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function updateWeather() {
+        const CACHE_KEY = 'rpg_weather_data';
+        const CACHE_TIME = 'rpg_weather_expiry';
+        const TTL = 15 * 60 * 1000; 
+
+        const renderWeather = (d) => {
+            const icons = { "Sole forte": "☀️", "Cielo velato": "⛅", "Nebbia": "🌫️", "Pioggia": "🌧️", "Neve": "❄️", "Tempesta": "⛈️" };
+            const container = document.getElementById('weather-rpg');
+            
+            document.getElementById('w-icon').innerText = icons[d.meteo] || "🌍";
+            document.getElementById('w-fase').innerText = d.fase;
+            document.getElementById('w-desc').innerText = `${d.meteo} • ${d.temperatura} • Magia ${d.condizione_magica}`;
+        };
+
+        
+        const cachedData = localStorage.getItem(CACHE_KEY);
+        const cachedExpiry = localStorage.getItem(CACHE_TIME);
+
+        if (cachedData && cachedExpiry && Date.now() < parseInt(cachedExpiry)) {
+            renderWeather(JSON.parse(cachedData));
+            return;
+        }
+
+        
+        try {
+            const res = await fetch('https://meteo-therpggame.antonino-ragusa-er.workers.dev/');
+            if (!res.ok) throw new Error();
+            const d = await res.json();
+            
+            
+            localStorage.setItem(CACHE_KEY, JSON.stringify(d));
+            localStorage.setItem(CACHE_TIME, (Date.now() + TTL).toString());
+            
+            renderWeather(d);
+        } catch (e) { 
+            console.warn("Meteo RPG offline o lento"); 
+        }
+    }
+
+    
+    updateWeather();
+</script><main class="main"> 
+<header class="page-header">
+  <h1>
+    Gatto
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Minecraft: memoria di costruzione e perdita
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🐱 Post della sezione Minecraft Ho sempre giocato a Minecraft. In alcuni periodi ci passavo giornate intere, scavando e costruendo, costruendo e scavando.
+Dalla casetta in fango si passava a edifici sempre più grandi e a reti di cunicoli sempre più complesse per muoversi senza interruzioni.
+Poi arrivava sempre quel momento in cui mi dicevo: “Ok, potrei inserire qualche plugin… oppure crearne uno.”
+E lì succedeva lo scarto.
+Dal creare dentro il gioco si passava al creare fuori dal gioco.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-05-06 11:24:56.099412 +0000 UTC'>May 6, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Minecraft: memoria di costruzione e perdita" href="http://localhost:54543/minecraft-server/gatto-minecraft-2026-05-06-132456/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:54543/">ILGDR! Devblog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><span id="cc-footer-link" style="display: none;">
+    <span style="opacity: 0.5; margin: 0 5px;">·</span>
+    <a href="/scrittoio/" style="text-decoration: underline; color: var(--secondary); font-size: inherit; font-family: inherit;">Scrittoio</a>
+    <span style="opacity: 0.5; margin: 0 5px;">·</span>
+    <button type="button" id="cc-preferences-btn" style="background: none; border: none; text-decoration: underline; color: var(--secondary); cursor: pointer; font-size: inherit; font-family: inherit; padding: 0;">Preferenze Cookie</button>
+</span>
+
+<script>
+    (function() {
+        var footer = document.querySelector('footer.footer');
+        var link = document.getElementById('cc-footer-link');
+        if (footer && link) {
+            footer.appendChild(link);
+            link.style.display = 'inline';
+        }
+    })();
+</script>
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLZMQ8SD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

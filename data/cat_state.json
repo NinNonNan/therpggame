@@ -1,0 +1,25 @@
+{
+  "counter": 1,
+  "log": [
+    {
+      "type": "trace",
+      "date": "2026-05-06T13:24:56.095806",
+      "section": "minecraft"
+    }
+  ],
+  "last": {
+    "type": "trace",
+    "date": "2026-05-06T13:24:56.095806",
+    "section": "minecraft"
+  },
+  "activity": 0.0,
+  "bias": {
+    "ilgdr": 1.05,
+    "minecraft": 1.0,
+    "letters": 1.05
+  },
+  "memory": {
+    "last_section": "minecraft",
+    "repetition_streak": 1
+  }
+}

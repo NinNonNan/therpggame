@@ -1,0 +1,49 @@
+{{ $cat := index .Site.Data "cat_state" }}
+
+{{ $labels := dict
+  "trace" "Una traccia lieve"
+  "watch" "Una presenza silenziosa"
+  "event" "Un’interferenza nel sistema"
+}}
+
+{{ $descriptions := dict
+  "trace" "Qualcosa è passato senza lasciare intenzione. Solo il segno del movimento."
+  "watch" "La sensazione di essere osservati, senza una ragione evidente."
+  "event" "Il sistema ha reagito a qualcosa che non dovrebbe averlo influenzato."
+}}
+
+{{ with $cat.last }}
+  {{ $date := time .date }}
+
+  {{ $label := index $labels .type }}
+  {{ $desc := index $descriptions .type }}
+
+  <div class="cat-entry">
+
+    <p class="cat-title">🐱 {{ $label }}</p>
+
+    <p class="cat-desc">
+      {{ $desc }}
+    </p>
+
+    <p class="cat-date">
+      🗓️ {{ $date.Format "2 January 2006"
+          | replaceRE "January" "gennaio"
+          | replaceRE "February" "febbraio"
+          | replaceRE "March" "marzo"
+          | replaceRE "April" "aprile"
+          | replaceRE "May" "maggio"
+          | replaceRE "June" "giugno"
+          | replaceRE "July" "luglio"
+          | replaceRE "August" "agosto"
+          | replaceRE "September" "settembre"
+          | replaceRE "October" "ottobre"
+          | replaceRE "November" "novembre"
+          | replaceRE "December" "dicembre" }}
+    </p>
+
+  </div>
+
+{{ else }}
+<p>Nessuna traccia ancora.</p>
+{{ end }}

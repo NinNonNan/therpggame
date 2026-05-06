@@ -1,0 +1,42 @@
+{{ $cat := .Site.Data.cat_state }}
+
+{{ $activity := $cat.activity | default 0 }}
+
+{{ $state := "Stato di osservazione" }}
+{{ $icon := "🐱" }}
+
+{{ if gt $activity 0.7 }}
+  {{ $state = "Stato attivo" }}
+  {{ $icon = "🐾" }}
+{{ else if gt $activity 0.3 }}
+  {{ $state = "Stato di osservazione" }}
+  {{ $icon = "🐱" }}
+{{ else }}
+  {{ $state = "Stato instabile" }}
+  {{ $icon = "⚠️" }}
+{{ end }}
+
+<div class="cat-dossier">
+
+  <div class="cat-title">
+    {{ $icon }} {{ $state }}
+  </div>
+
+  <div class="cat-line">
+    <span class="label">Apparizioni registrate</span>
+    <span class="value">{{ $cat.counter | default 0 }}</span>
+  </div>
+
+  <div class="cat-line">
+    <span class="label">Ultima traccia</span>
+    <span class="value">
+      {{ with $cat.last }}
+        {{ $t := time .date }}
+        {{ .type }} — {{ $t.Format "2 January 2006 15:04" }}
+      {{ else }}
+        nessuna
+      {{ end }}
+    </span>
+  </div>
+
+</div>

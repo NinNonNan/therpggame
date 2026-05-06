@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>ILGDR! Devblog</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:54543/</link>
     <description>Recent content on ILGDR! Devblog</description>
     <generator>Hugo</generator>
     <language>it-it</language>
     <lastBuildDate>Thu, 30 Apr 2026 11:00:00 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54543/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lettere dal buio</title>
-      <link>http://localhost:1313/lettere-dal-buio/lettere-dal-buio/</link>
+      <link>http://localhost:54543/lettere-dal-buio/lettere-dal-buio/</link>
       <pubDate>Thu, 30 Apr 2026 11:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/lettere-dal-buio/lettere-dal-buio/</guid>
+      <guid>http://localhost:54543/lettere-dal-buio/lettere-dal-buio/</guid>
       <description>&lt;p&gt;Ci sono idee che fanno rumore.&lt;/p&gt;
 &lt;p&gt;E poi ci sono quelle che arrivano in silenzio.&lt;/p&gt;
 &lt;p&gt;Negli ultimi giorni ho aggiunto qualcosa a &lt;strong&gt;ILGDR!&lt;/strong&gt; che appartiene decisamente alla seconda categoria.
@@ -22,9 +22,9 @@ Un modo diverso di vivere il mondo di gioco, più lento, più intimo… forse an
     </item>
     <item>
       <title>Occhi Aperti (e biscotti)</title>
-      <link>http://localhost:1313/ilgdr/occhi-aperti-e-biscotti/</link>
+      <link>http://localhost:54543/ilgdr/occhi-aperti-e-biscotti/</link>
       <pubDate>Fri, 17 Apr 2026 10:38:24 +0200</pubDate>
-      <guid>http://localhost:1313/ilgdr/occhi-aperti-e-biscotti/</guid>
+      <guid>http://localhost:54543/ilgdr/occhi-aperti-e-biscotti/</guid>
       <description>&lt;p&gt;Si continua.&lt;/p&gt;
 &lt;p&gt;Perché ogni avventura che si rispetti, a un certo punto, ha bisogno anche di… osservare. Capire. Studiare cosa succede dietro le quinte.&lt;/p&gt;
 &lt;p&gt;Abbiamo quindi aggiunto un paio di strumenti che, sì, suonano molto meno epici di una spada leggendaria, ma che fanno comunque il loro sporco lavoro:&lt;/p&gt;
@@ -36,9 +36,9 @@ Un modo diverso di vivere il mondo di gioco, più lento, più intimo… forse an
     </item>
     <item>
       <title>Privacy Policy e Cookie Policy</title>
-      <link>http://localhost:1313/privacy-policy/</link>
+      <link>http://localhost:54543/privacy-policy/</link>
       <pubDate>Thu, 16 Apr 2026 10:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/privacy-policy/</guid>
+      <guid>http://localhost:54543/privacy-policy/</guid>
       <description>&lt;p&gt;Benvenuto nella pagina dedicata alla privacy di &lt;strong&gt;ILGDR! Devblog&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;1-cookie-e-tracciamento&#34;&gt;1. Cookie e Tracciamento&lt;/h2&gt;
 &lt;p&gt;Utilizziamo cookie tecnici per far funzionare il sito e ricordarci le tue preferenze. Utilizziamo inoltre Google Analytics (tramite Google Tag Manager) per raccogliere statistiche anonime sulle visite, ma solo se ci fornisci il tuo consenso esplicito.&lt;/p&gt;
@@ -47,18 +47,18 @@ Un modo diverso di vivere il mondo di gioco, più lento, più intimo… forse an
     </item>
     <item>
       <title>Nuova Release</title>
-      <link>http://localhost:1313/ilgdr/nuova-release/</link>
+      <link>http://localhost:54543/ilgdr/nuova-release/</link>
       <pubDate>Wed, 15 Apr 2026 16:37:58 +0200</pubDate>
-      <guid>http://localhost:1313/ilgdr/nuova-release/</guid>
+      <guid>http://localhost:54543/ilgdr/nuova-release/</guid>
       <description>&lt;p&gt;Benvenuti a questo primo aggiornamento dello sviluppo di &lt;strong&gt;ILGDR!&lt;/strong&gt; 🕹️&lt;/p&gt;
 &lt;p&gt;Il lavoro dietro le quinte prosegue spedito tra una riga di codice e l&amp;rsquo;altra. Questa settimana ci siamo concentrati su alcune correzioni strutturali necessarie per mantenere l&amp;rsquo;equilibrio del gioco e su alcuni piccoli aggiustamenti all&amp;rsquo;interfaccia.&lt;/p&gt;
 &lt;p&gt;La novità più rilevante riguarda il sistema di combattimento: abbiamo finalmente chiuso una falla logica che permetteva di impugnare due armi a due mani contemporaneamente ⚔️. Un&amp;rsquo;impresa eroica, forse, ma decisamente poco realistica. Ora le regole sono chiare: certe armi richiedono impegno totale!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Piccole Cose</title>
-      <link>http://localhost:1313/ilgdr/piccole-cose/</link>
+      <link>http://localhost:54543/ilgdr/piccole-cose/</link>
       <pubDate>Wed, 15 Apr 2026 11:00:24 +0200</pubDate>
-      <guid>http://localhost:1313/ilgdr/piccole-cose/</guid>
+      <guid>http://localhost:54543/ilgdr/piccole-cose/</guid>
       <description>&lt;p&gt;Nessun aggiornamento a breve… o forse sì? Vedremo più tardi 👀&lt;/p&gt;
 &lt;p&gt;Nel frattempo ho sistemato un paio di cose.&lt;/p&gt;
 &lt;p&gt;Qualcuno era riuscito a impugnare &lt;strong&gt;due asce a due mani&lt;/strong&gt; contemporaneamente 😅&lt;br&gt;
@@ -68,9 +68,9 @@ Ho sistemato anche quelli: nella prossima versione dovrebbe essere tutto molto p
     </item>
     <item>
       <title>ILGDR! sbarca su Ko-fi</title>
-      <link>http://localhost:1313/ilgdr/me-lo-offri-un-caffe/</link>
+      <link>http://localhost:54543/ilgdr/me-lo-offri-un-caffe/</link>
       <pubDate>Tue, 14 Apr 2026 10:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/ilgdr/me-lo-offri-un-caffe/</guid>
+      <guid>http://localhost:54543/ilgdr/me-lo-offri-un-caffe/</guid>
       <description>&lt;p&gt;Piccolo aggiornamento di viaggio.&lt;/p&gt;
 &lt;p&gt;Ho aperto la pagina Ko-fi di ILGDR!&lt;/p&gt;
 &lt;p&gt;Non è un cambio di direzione, né un “adesso si monetizza tutto”.
@@ -82,38 +82,24 @@ e magari, in futuro, accedere a versioni anticipate o contenuti extra&lt;/p&gt;<
     </item>
     <item>
       <title>Diventa BETA WARRIOR!</title>
-      <link>http://localhost:1313/ilgdr/dammi-la-beta/</link>
+      <link>http://localhost:54543/ilgdr/dammi-la-beta/</link>
       <pubDate>Fri, 10 Apr 2026 11:09:32 +0200</pubDate>
-      <guid>http://localhost:1313/ilgdr/dammi-la-beta/</guid>
+      <guid>http://localhost:54543/ilgdr/dammi-la-beta/</guid>
       <description>&lt;p&gt;Niente funziona mai al primo colpo. E va bene così.&lt;/p&gt;
 &lt;p&gt;Qui siamo ancora in fase di costruzione: cose che si rompono, idee che cambiano forma, feature che nascono e altre che spariscono nel giro di una notte. È un caos controllato — ma è proprio lì che stiamo costruendo qualcosa di interessante.&lt;/p&gt;
 &lt;p&gt;La verità è che abbiamo ancora tantissimo spazio per sperimentare, buttare dentro modifiche, correggere problemi e aggiungere nuove idee (anche quelle che sembrano impossibili adesso).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Comincia l&#39;avventura</title>
-      <link>http://localhost:1313/ilgdr/comincia-l-avventura/</link>
+      <link>http://localhost:54543/ilgdr/comincia-l-avventura/</link>
       <pubDate>Thu, 09 Apr 2026 11:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/ilgdr/comincia-l-avventura/</guid>
+      <guid>http://localhost:54543/ilgdr/comincia-l-avventura/</guid>
       <description>&lt;p&gt;Si comincia.&lt;/p&gt;
 &lt;p&gt;Quello che spero possa essere l’inizio di un lungo viaggio (come cantava Bilbo), un unico gioco capace di contenere tutto ciò che negli anni ho apprezzato, sperimentato e vissuto.&lt;/p&gt;
 &lt;p&gt;Un, anzi &lt;em&gt;IL&lt;/em&gt; GDR.&lt;/p&gt;
 &lt;p&gt;Un gioco dalla grafica praticamente inesistente — e quando c’è, a volte è pure bruttina — ma che, nelle intenzioni, vuole provare a dire qualcosa.&lt;/p&gt;
 &lt;p&gt;Lo intitolo, con molta modestia: &lt;strong&gt;ILGDR!&lt;/strong&gt;&lt;br&gt;
 Tutto maiuscolo, senza spazi. Niente compromessi, niente fraintendimenti.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/lettere-dal-buio/comincia-l-avventura/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/lettere-dal-buio/comincia-l-avventura/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/lettere-dal-buio/dammi-la-beta/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/lettere-dal-buio/dammi-la-beta/</guid>
-      <description></description>
     </item>
   </channel>
 </rss>

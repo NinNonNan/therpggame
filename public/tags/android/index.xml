@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Android on ILGDR! Devblog</title>
-    <link>http://localhost:1313/tags/android/</link>
+    <link>http://localhost:54543/tags/android/</link>
     <description>Recent content in Android on ILGDR! Devblog</description>
     <generator>Hugo</generator>
     <language>it-it</language>
     <lastBuildDate>Thu, 09 Apr 2026 11:00:00 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54543/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comincia l&#39;avventura</title>
-      <link>http://localhost:1313/ilgdr/comincia-l-avventura/</link>
+      <link>http://localhost:54543/ilgdr/comincia-l-avventura/</link>
       <pubDate>Thu, 09 Apr 2026 11:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/ilgdr/comincia-l-avventura/</guid>
+      <guid>http://localhost:54543/ilgdr/comincia-l-avventura/</guid>
       <description>&lt;p&gt;Si comincia.&lt;/p&gt;
 &lt;p&gt;Quello che spero possa essere l’inizio di un lungo viaggio (come cantava Bilbo), un unico gioco capace di contenere tutto ciò che negli anni ho apprezzato, sperimentato e vissuto.&lt;/p&gt;
 &lt;p&gt;Un, anzi &lt;em&gt;IL&lt;/em&gt; GDR.&lt;/p&gt;

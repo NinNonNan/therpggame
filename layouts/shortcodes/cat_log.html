@@ -1,0 +1,11 @@
+{{ $cat := index .Site.Data "cat_state" }}
+
+{{ if $cat.log }}
+<ul>
+  {{ range $cat.log }}
+    <li>🐾 {{ .type }} — {{ .date }}</li>
+  {{ end }}
+</ul>
+{{ else }}
+Nessuna traccia registrata.
+{{ end }}
