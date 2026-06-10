@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Minecraft Server on ILGDR! Devblog</title>
+    <link>https://www.therpggame.com/minecraft-server/</link>
+    <description>Recent content in Minecraft Server on ILGDR! Devblog</description>
+    <generator>Hugo</generator>
+    <language>it-it</language>
+    <lastBuildDate>Thu, 07 May 2026 07:05:02 +0000</lastBuildDate>
+    <atom:link href="https://www.therpggame.com/minecraft-server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POST mortem</title>
+      <link>https://www.therpggame.com/minecraft-server/gatto-minecraft-2026-05-07-090502/</link>
+      <pubDate>Thu, 07 May 2026 07:05:02 +0000</pubDate>
+      <guid>https://www.therpggame.com/minecraft-server/gatto-minecraft-2026-05-07-090502/</guid>
+      <description>&lt;p&gt;Due banchi belli freschi per un totale di sedici giga: aggiornamento perfetto per il server che, con 8GB, avrebbe potuto stare un po&amp;rsquo; stretto sui lavori più impegnativi.&lt;/p&gt;
+&lt;p&gt;Quindi smonto tutto, apro il case, rimuovo i due vecchi banchi da 4GB e installo quelli da 8GB.&lt;/p&gt;
+&lt;p&gt;Ricollego, riavvio, provo ad accedere via SSH.&lt;/p&gt;
+&lt;p&gt;Nulla.&lt;/p&gt;
+&lt;p&gt;Il server si ferma al POST. Facciamo ricerche sulle possibili cause, visto che tanto non ho modo di collegargli una tastiera e uno schermo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Minecraft: memoria di costruzione e perdita</title>
+      <link>https://www.therpggame.com/minecraft-server/gatto-minecraft-2026-05-06-132456/</link>
+      <pubDate>Wed, 06 May 2026 11:24:56 +0000</pubDate>
+      <guid>https://www.therpggame.com/minecraft-server/gatto-minecraft-2026-05-06-132456/</guid>
+      <description>&lt;p&gt;Ho sempre giocato a Minecraft ⛏️. In alcuni periodi ci passavo giornate intere, scavando e costruendo, costruendo e scavando.&lt;/p&gt;
+&lt;p&gt;Dalla casetta in fango si passava a edifici sempre più grandi 🏗️ e a reti di cunicoli sempre più complesse, create per muoversi senza interruzioni.&lt;/p&gt;
+&lt;p&gt;Poi arrivava sempre quel momento in cui mi dicevo:&lt;br&gt;
+“Ok, potrei inserire qualche plugin… oppure crearne uno.”&lt;/p&gt;
+&lt;p&gt;E lì succedeva lo scarto.&lt;/p&gt;
+&lt;p&gt;Dal creare dentro il gioco si passava al creare fuori dal gioco 💻.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

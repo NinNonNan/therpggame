@@ -1,0 +1,147 @@
+/* Default (Light Theme) Bureau Colors */
+:root { /* This applies when html[data-theme="light"] or no data-theme is set */
+    --bureau-paper: #e8e4d8; /* Light beige, paper-like */
+    --bureau-green: #2d4533; /* Dark office green */
+    --bureau-ink: #1a1a1a;   /* Dark charcoal for text and borders */
+}
+
+/* Dark Theme Bureau Colors */
+html[data-theme="dark"] {
+    --bureau-paper: #2e2e33; /* Dark background, similar to PaperMod's --entry */
+    --bureau-green: #5e7a65; /* Lighter, desaturated green for contrast */
+    --bureau-ink: #e0e0e0;   /* Light grey for text and borders */
+}
+
+/* Common Bureau Variables (derived from the above) */
+:root, html[data-theme="dark"] { /* Apply to both themes */
+    --bureau-border: 3px solid var(--bureau-ink);
+    --bureau-shadow: 8px 8px 0px var(--bureau-ink);
+}
+
+/* Override aggressivo per la sezione Scrittoio */
+.scrittoio-wrapper {
+    background-color: var(--bureau-paper) !important;
+    padding: 40px !important;
+    margin: 30px auto !important;
+    border: var(--bureau-border);
+    box-shadow: var(--bureau-shadow);
+    color: var(--bureau-ink) !important;
+    font-family: 'Courier Prime', monospace !important;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Forza il font e il colore su tutti gli elementi interni */
+.scrittoio-wrapper h1, 
+.scrittoio-wrapper h2, 
+.scrittoio-wrapper p, 
+.scrittoio-wrapper span {
+    color: var(--bureau-ink) !important;
+    font-family: 'Courier Prime', monospace !important;
+}
+
+.bureau-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--bureau-ink);
+    padding-bottom: 10px;
+}
+
+.scrittoio-container {
+    background-image: radial-gradient(var(--bureau-ink) 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    background-color: var(--bureau-paper);
+    padding: 10px;
+}
+
+.bureau-header {
+    background-color: var(--bureau-green);
+    color: #ffffff !important; /* Keep white text on green header for both themes */
+    padding: 10px 15px;
+    margin: -40px -40px 30px -40px;
+    border-bottom: var(--bureau-border);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.scrittoio-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.bureau-btn {
+    background: var(--bureau-paper);
+    border: var(--bureau-border);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0px var(--bureau-ink);
+    transition: all 0.1s;
+}
+
+.bureau-btn:active, .bureau-btn.active {
+    background: var(--bureau-green);
+    color: #ffffff !important; /* Keep white text on active green button for both themes */
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--bureau-ink);
+}
+
+.letter-item {
+    border-bottom: 2px solid var(--bureau-ink);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.letter-sender { font-weight: bold; }
+
+.letter-item:hover { background: rgba(0,0,0,0.05); }
+
+.bureau-loading {
+    text-align: center;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Stili per il prompt di autenticazione */
+.bureau-auth-prompt, .bureau-profile-setup, .bureau-error {
+    text-align: center;
+    padding: 40px;
+    border: 2px dashed var(--bureau-ink);
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.5); /* Leggera trasparenza */
+    box-shadow: 3px 3px 0px var(--bureau-ink);
+}
+
+.bureau-auth-prompt p, .bureau-profile-setup p, .bureau-error p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.bureau-auth-prompt button, .bureau-profile-setup button, .bureau-error button {
+    margin-top: 20px;
+}
+
+/* Stili per il campo input del nome in codice */
+.bureau-input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 15px;
+    border: var(--bureau-border);
+    background-color: var(--bureau-paper);
+    font-family: 'Courier Prime', monospace;
+    color: var(--bureau-ink);
+    box-shadow: inset 2px 2px 0px var(--bureau-ink);
+}
